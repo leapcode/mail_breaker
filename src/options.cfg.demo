@@ -1,0 +1,11 @@
+# You need to copy this file to 'options.cfg' and update it
+# using your preferences.
+# 'options.cfg' is ignored by git.
+
+[Credentials]
+account = your.test.account@gmail.com
+password = password placeholder
+
+[Configs]
+mails_amount = 10
+to = test_account@bitmask.net
