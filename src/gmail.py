@@ -117,9 +117,29 @@ class GMail(object):
         try:
             result = self._server.sendmail(self._from, to_addr_list, message)
         except Exception as e:
-            result['Exception'] = repr(e)
+            result = {'Exception': repr(e)}
 
         if problems:
             result['Attachments'] = problems
+
+        return result
+
+    def send_email_string(self, mail, to):
+        """
+        Sends an email from an already created email as a string.
+
+        :param mail: the mail to send
+        :type mail: str
+        :param to: a address to send the email.
+        :type to: str
+
+        :return: an empty dict if everything went ok or
+                 the problems result of sending the email(s).
+        :rtype: dict
+        """
+        try:
+            result = self._server.sendmail(self._from, [to], mail)
+        except Exception as e:
+            result = {'Exception': repr(e)}
 
         return result
