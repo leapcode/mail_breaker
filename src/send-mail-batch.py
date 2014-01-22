@@ -191,10 +191,10 @@ gmail = GMail(FROM, SECRET)
 
 print "Sending {0} mails batch...".format(MAX_MAILS)
 
-count = 1
-while count <= MAX_MAILS:
+count = 0
+while count < MAX_MAILS:
     idx = (count % len(lorem_subjects))
-    subject = "[TEST] {0:03} - {1}".format(count, lorem_subjects[idx])
+    subject = "[TEST] {0:03} - {1}".format(count+1, lorem_subjects[idx])
     print "Sending '{0}' ... ".format(subject),
     try:
         problems = send_test_mail(subject)
