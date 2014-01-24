@@ -16,11 +16,15 @@ if ! `hash $SWAKS 2>/dev/null`; then
     exit 1
 fi
 
-# Customize this in order to test the desired accounts
-FROM=ivan@dev.bitmask.net
-TO=test_123@dev.bitmask.net
+# Python helper to read configurations from file:
+TO=`python -c "from ConfigParser import SafeConfigParser as scp; p = scp(); p.read('options.cfg'); print p.get('Configs', 'to');"`
+
+FROM=swaks@bitmask.net  # this account does not need to exist.
 
 # NOTE: Add the swak commands below here:
 
-# Unicode subject and body, without charset specification
-$SWAKS --to $TO --from $FROM --header "Subject: Test -- áèīôü" --body "Howdy from swaks. ýëąĥ" --helo 'asdf.com'
+# Non-ascii subject and body, without charset specification
+$SWAKS --to $TO --from $FROM --header "Subject: Test 01 -- áèīôü" --body "Howdy from swaks. ýëąĥ" --helo 'asdf.com'
+
+# Non-ascii subject and body, with charset specification
+$SWAKS --to $TO --from $FROM --header "Content-Type: text/plain; charset='utf-8'\nSubject: Test 02 -- áèīôü" --body "Howdy from swaks. ýëąĥ" --helo 'asdf.com'
