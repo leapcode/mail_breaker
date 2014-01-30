@@ -1,0 +1,12 @@
+From: {FROM}
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Thunderbird/24.2.0
+MIME-Version: 1.0
+To: {TO}
+Subject: =?windows-1252?q?=5BTEST=5D_windows-1252_subject_-_H=C3=A9ll=C3=B2_th=C3?=
+ =?windows-1252?q?=ABr=C3=AA!_-_=C3=B6=C3=A4=C3=BC=C3=9F=40=C3=B8=C3=B1=E2?=
+ =?windows-1252?q?=82=AC?=
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: 8bit
+
+Demo message, windows-1252 encoding.
+צהüß@רס€
