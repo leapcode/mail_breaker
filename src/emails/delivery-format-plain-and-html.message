@@ -1,0 +1,33 @@
+From: {FROM}
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:24.0) Gecko/20100101 Thunderbird/24.2.0
+MIME-Version: 1.0
+To: {TO}
+Subject: Test delivery format - plain & html
+Content-Type: multipart/alternative;
+ boundary="------------090107040900010708000400"
+
+This is a multi-part message in MIME format.
+--------------090107040900010708000400
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Delivery format: Plain and Rich (HTML) text.
+Hello there... testing mail.
+
+
+--------------090107040900010708000400
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    Delivery format: Plain and Rich (HTML) text.<br>
+    Hello there... testing mail.<br>
+    <br>
+  </body>
+</html>
+
+--------------090107040900010708000400--
